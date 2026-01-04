@@ -58,4 +58,13 @@ public class Task {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
 }

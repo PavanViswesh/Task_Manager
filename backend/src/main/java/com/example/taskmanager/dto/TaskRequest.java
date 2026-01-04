@@ -1,7 +1,7 @@
 package com.example.taskmanager.dto;
-import java.time.LocalDate;
 
 import com.example.taskmanager.model.Status;
+import java.time.LocalDate;
 
 public class TaskRequest {
 
@@ -10,7 +10,7 @@ public class TaskRequest {
     private Status status;
     private LocalDate dueDate;
 
-
+    // getters & setters
     public String getTitle() {
         return title;
     }
@@ -33,5 +33,13 @@ public class TaskRequest {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
 }
