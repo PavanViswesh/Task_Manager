@@ -5,9 +5,11 @@ import { toast } from "react-toastify";
 function Login({ onLogin, onShowRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     try {
+      setLoading(true);
       const res = await api.post("/api/auth/login", {
         email,
         password,
@@ -17,7 +19,7 @@ function Login({ onLogin, onShowRegister }) {
       onLogin(res.data);
     } catch (err) {
       toast.error("Invalid email or password ❌");
-    }
+    }setLoading(true);
   };
 
   return (
@@ -46,9 +48,14 @@ function Login({ onLogin, onShowRegister }) {
         <div className="icon-circle">🔒</div>
       </div>
 
-      <button className="login-btn" onClick={handleLogin}>
-        LOGIN
-      </button>
+      <button
+  className="login-btn"
+  onClick={handleLogin}
+  disabled={loading}
+>
+  {loading ? "Logging in..." : "Login"}
+</button>
+
 
       <p style={{ color: "#9ca3af", marginTop: "20px" }}>
         Don’t have an account?{" "}
