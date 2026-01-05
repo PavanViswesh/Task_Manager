@@ -29,7 +29,7 @@ function Login({ onLogin, onShowRegister }) {
         <div className="icon-circle">👤</div>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
